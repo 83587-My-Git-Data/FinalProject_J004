@@ -18,7 +18,6 @@ public class PersonRespDto {
 	private String emailId;
 	private String password;
 	private String address;
-	private char gender;
 	private City city;
 	private String profileImagePath;
     //private boolean isActive;

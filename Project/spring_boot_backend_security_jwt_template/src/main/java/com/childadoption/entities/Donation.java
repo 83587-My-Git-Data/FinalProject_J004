@@ -12,13 +12,13 @@ import lombok.*;
 @ToString
 @Table(name = "donations")
 public class Donation {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "donation_id")
+	@Column(name = "donation_id", unique = true)
 	private Long donationId;
 
-	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = false)
+	@Column(name = "user_id", unique = true)
 	private Person user;
 
 	@Column(name = "donated_amount", nullable = false)

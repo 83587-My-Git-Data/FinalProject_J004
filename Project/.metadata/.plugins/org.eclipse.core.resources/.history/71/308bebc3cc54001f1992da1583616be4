@@ -1,0 +1,11 @@
+package com.childadoption.repositories;
+
+import java.util.List;
+import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.childadoption.entities.Orphan;
+
+public interface OrphanDao extends JpaRepository<Orphan,Long> {
+	Optional<Orphan> findByOrphanId(Long id);
+	Optional<List<Orphan>> findByNgoNgoId(Long id);
+}

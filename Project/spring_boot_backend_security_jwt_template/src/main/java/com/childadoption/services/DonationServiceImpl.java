@@ -2,19 +2,15 @@ package com.childadoption.services;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.childadoption.dto.DonationReqDto;
 import com.childadoption.dto.DonationRespDto;
 import com.childadoption.entities.Donation;
 import com.childadoption.repositories.DonationDao;
 
-@Service
-@Transactional
+
 public class DonationServiceImpl implements DonationService {
 
 	@Autowired

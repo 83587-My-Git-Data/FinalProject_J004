@@ -8,7 +8,7 @@ import lombok.*;
 public class OrphanReqDto {
 	 	private Long orphanId;
 	    private String orphanName;
-	    private char orphanGender;
+	    private String orphanGender;
 	    private int orphanAge;
 	    private String orphanDetails;
 	    private Ngo ngo;

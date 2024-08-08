@@ -1,0 +1,37 @@
+package com.childadoption.services;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.childadoption.dto.AuthRequest;
+import com.childadoption.dto.PersonRespDto;
+import com.childadoption.entities.Person;
+import com.childadoption.repositories.PersonDao;
+
+public class PersonServiceImpl implements PersonService {
+
+	@Autowired
+	private PersonDao personDao;
+	
+	@Autowired
+	private ModelMapper mapper;
+	@Override
+	public PersonRespDto signUp(PersonRespDto personResp) {
+		
+		Person p = mapper.map(personResp, Person.class);
+		personDao.save(p);
+		return mapper.map(p, PersonRespDto.class);
+	}
+	
+	@Override
+	public PersonRespDto authenticateUser(AuthRequest dto) {
+		// 1.invoke dao 's method
+		Person p = personDao.findByEmailIdAndPassword(
+				dto.getEmailId(),dto.getPassword())
+				.orElseThrow();/*****/
+		//////CUSTOM EXCEPTION
+		//valid login -user : persistent -> entity -> dto
+		return mapper.map(p, PersonRespDto.class);
+
+}
+}

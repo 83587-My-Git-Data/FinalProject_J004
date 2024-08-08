@@ -1,0 +1,29 @@
+package com.childadoption.services;
+
+import javax.transaction.Transactional;
+import org.springframework.stereotype.Service;
+
+import com.childadoption.dto.ApiResponse;
+import com.childadoption.dto.AppointmentReqDto;
+import com.childadoption.dto.AppointmentRespDto;
+import com.childadoption.dto.OrphanReqDto;
+import com.childadoption.dto.OrphanRespDto;
+
+@Service
+@Transactional
+public class AppointmentServiceImpl implements AppointmentService {
+	
+	public ApiResponse addAppointment(AppointmentRespDto orphanResp)
+	{
+		
+		return new ApiResponse("Appointment added!!!");
+	}
+	public ApiResponse deleteAppointment(Long id)
+	{
+		return new ApiResponse("Appointment deleted!!!");
+	}
+	public ApiResponse editAppointment(AppointmentReqDto orphanReq)
+	{
+		return new ApiResponse("Appointment edited!!!");
+	}
+}

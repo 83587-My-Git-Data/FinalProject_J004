@@ -1,10 +1,7 @@
 package com.childadoption.services;
 
-import javax.transaction.Transactional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.childadoption.dto.NgoReqDto;
 import com.childadoption.dto.NgoRespDto;
@@ -13,8 +10,6 @@ import com.childadoption.entities.Ngo;
 import com.childadoption.entities.Person;
 import com.childadoption.repositories.NgoDao;
 
-@Service
-@Transactional
 public class NgoServiceImpl implements NgoService {
 
 	@Autowired
@@ -33,7 +28,7 @@ public class NgoServiceImpl implements NgoService {
 		}
 	}
 	
-	public void deactivateNgo(NgoReqDto ngoReq) {
+	public void deActivateNgo(NgoReqDto ngoReq) {
 		Ngo ngo = ngoDao.findByNgoId(ngoReq.getNgoId()).orElseThrow();// ApiResponse
 		if(ngo!=null)
 		{
@@ -66,7 +61,9 @@ public class NgoServiceImpl implements NgoService {
 		Ngo p = ngoDao.findByNgoName(name).orElseThrow();
 		return mapper.map(p, NgoRespDto.class);
 	}
-
+	
+	
+	
 	
 	
 	

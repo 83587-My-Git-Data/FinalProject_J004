@@ -1,8 +1,6 @@
 package com.childadoption.entities;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-
 import javax.persistence.*;
 import lombok.*;
 
@@ -14,27 +12,17 @@ import lombok.*;
 @ToString
 @Table(name = "appointments")
 public class Appointment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "appointment_id")
+    @Column(name = "appointment_id", unique = true)
     private Long appointmentId;
- 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+
+    @Column(name = "user_id", unique = true)
     private Person user;
 
-    @ManyToOne
-    @JoinColumn(name = "ngo_id", nullable = false)
+    @Column(name = "ngo_id", nullable = false, unique = true)
     private Ngo ngo;
-    
-    @Column(name = "appointment_date", nullable = false)
-    private LocalDate apponintmentDate;
-    
-    @Column(name = "appointment_time", nullable = false)
-    private LocalTime appointmentTime;
-    
-//    @Column(name = "date_id", nullable = false, unique = true)
-//    private Date date;
 
 //    @Column(name = "ngo_admin_id", unique = true)
 //    private Person ngoAdminId;

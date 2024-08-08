@@ -1,0 +1,7 @@
+package com.childadoption.services;
+
+import com.childadoption.dto.DonationRespDto;
+
+public interface DonationService {
+	public DonationRespDto updateDonation(DonationRespDto userDto);
+}

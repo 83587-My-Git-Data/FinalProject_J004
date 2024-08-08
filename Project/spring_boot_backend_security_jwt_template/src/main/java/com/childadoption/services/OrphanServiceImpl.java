@@ -2,12 +2,10 @@ package com.childadoption.services;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import com.childadoption.dto.ApiResponse;
 import com.childadoption.dto.OrphanReqDto;
 import com.childadoption.dto.OrphanRespDto;
 import com.childadoption.dto.PersonRespDto;
@@ -15,8 +13,6 @@ import com.childadoption.entities.Orphan;
 import com.childadoption.entities.Person;
 import com.childadoption.repositories.OrphanDao;
 
-@Service
-@Transactional
 public class OrphanServiceImpl implements OrphanService {
 
 	@Autowired
@@ -25,21 +21,24 @@ public class OrphanServiceImpl implements OrphanService {
 	@Autowired
 	private ModelMapper mapper;
 	@Override
-	public void addOrphan(OrphanRespDto orphanResp) {
+	public ApiResponse addOrphan(OrphanRespDto orphanResp) {
 		Orphan o = mapper.map(orphanResp, Orphan.class);
 		orphanDao.save(o);
+		return new ApiResponse("Orphan Added in the table");
 	}
 	
-	public void deleteOrphan(Long id)
+	public ApiResponse deleteOrphan(Long id)
 	{
 		Orphan o = orphanDao.findByOrphanId(id).orElseThrow();
 		if(o!=null)
 		{
 			orphanDao.delete(o);
 		}
+		
+		return new ApiResponse("Orphan details deleted");
 	}
 	
-	public OrphanRespDto editOrphan(OrphanReqDto orphanReq)
+	public ApiResponse editOrphan(OrphanReqDto orphanReq)
 	{
 		Orphan o1 = orphanDao.findByOrphanId(orphanReq.getOrphanId()).orElseThrow();
 		if(o1!=null)
@@ -47,6 +46,7 @@ public class OrphanServiceImpl implements OrphanService {
 			o1.setOrphanName(orphanReq.getOrphanName());
 			o1.setOrphanAge(orphanReq.getOrphanAge());
 			o1.setOrphanGender(orphanReq.getOrphanGender());
+			o1.setNgoName(orphanReq.getNgoName());
 			o1.setNgo(orphanReq.getNgo());
 			o1.setOrphanDetails(orphanReq.getOrphanDetails());
 			
@@ -54,9 +54,19 @@ public class OrphanServiceImpl implements OrphanService {
 			
 		}
 		
-		return mapper.map(o1,OrphanRespDto.class );
+//		return mapper.map(o1,OrphanRespDto.class );
+		return new ApiResponse("Orphan details updated");
 	}
 
+	@Override
+	public List<OrphanRespDto> GetOrphanListAsNgo(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	///**************************************//////////
+//
 //	@Override
 //	public List<OrphanRespDto> GetOrphanListAsNgo(Long id) {
 //		List<Orphan> list = orphanDao.findByNgoNgoId(id).orElseThrow();

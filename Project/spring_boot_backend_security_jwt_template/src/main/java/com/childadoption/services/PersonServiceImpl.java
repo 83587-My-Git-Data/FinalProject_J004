@@ -2,11 +2,8 @@ package com.childadoption.services;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.childadoption.dto.AuthRequest;
 import com.childadoption.dto.PersonReqDto;
@@ -14,8 +11,6 @@ import com.childadoption.dto.PersonRespDto;
 import com.childadoption.entities.Person;
 import com.childadoption.repositories.PersonDao;
 
-@Service
-@Transactional
 public class PersonServiceImpl implements PersonService {
 
 	@Autowired
@@ -23,10 +18,10 @@ public class PersonServiceImpl implements PersonService {
 	
 	@Autowired
 	private ModelMapper mapper;
-	
 	@Override
-	public PersonRespDto signUp(PersonReqDto personReqDto) {
-		Person p = mapper.map(personReqDto, Person.class);
+	public PersonRespDto signUp(PersonRespDto personResp) {
+		
+		Person p = mapper.map(personResp, Person.class);
 		personDao.save(p);
 		return mapper.map(p, PersonRespDto.class); 	 	
 	}
@@ -82,15 +77,17 @@ public class PersonServiceImpl implements PersonService {
 	//     Find User By City
 	@Override
 	public PersonRespDto findUserByCity(String city) {
+		// TODO Auto-generated method stub
+		
 		Person p = personDao.findByCity(city).orElseThrow();
-		if(p.getRole().name() == "USER")
+		
+		if(p.getRole().getRoleType()=="USER")
 		{
 			return mapper.map(p, PersonRespDto.class);
-		}	
+		}
+			
 		return null;
 	}
-
-	
 	
 	
 	

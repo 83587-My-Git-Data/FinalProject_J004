@@ -14,45 +14,38 @@ import lombok.*;
 public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="person_id")
+	@Column(name="person_id",nullable=false)
 	private Long personId;
 	
 	@OneToOne
-	@JoinColumn(name="ngo_id", unique = true)
+	@JoinColumn(name="ngo_id",nullable=false)
 	private Ngo ngo;
 	
 	@Column(name="full_name",nullable=false)
 	private String fullName;
 	
-	@Enumerated(EnumType.STRING) 
+	@OneToOne
+	@JoinColumn(name="role_id",nullable=false)
 	private Role role;
 	
-	@Column(name = "mobile_number", nullable = false, unique = true)
 	private String mobNo; /// string
 	
-	@Column(name="email_id",nullable=false, unique = true)
+	@Column(name="email_id",nullable=false)
 	private String emailId;
 	
 	@Column(name="password",nullable=false)
 	private String password;
 	
-	@Column(name = "address", nullable = false)
 	private String address;
 	
-	@Column(name = "gender", nullable = false)
-	private char gender;
-	
-	@ManyToOne
-	@JoinColumn(name="city_id",nullable=false)
+	@OneToMany
+	@Column(name="city_id",nullable=false)
 	private City city; // string
 	
-	@Column(name="profile_image_path")
 	private String profileImagePath;
 	
-	@Column(name="is_active")
 	private boolean isActive;
 	
-	@Column(name="is_online")
 	private boolean isOnline;
 	
 	

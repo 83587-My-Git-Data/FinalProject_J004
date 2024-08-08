@@ -1,0 +1,13 @@
+package com.childadoption.services;
+
+import com.childadoption.dto.AuthRequest;
+import com.childadoption.dto.PersonReqDto;
+import com.childadoption.dto.PersonRespDto;
+
+public interface PersonService {
+
+	public PersonRespDto signUp(PersonRespDto personResp);
+	public PersonRespDto authenticateUser(AuthRequest dto);
+	 public PersonRespDto changePassword(PersonRespDto perDto, String newPassword);
+	 public PersonRespDto updateUserDetails(PersonReqDto perDto);
+}

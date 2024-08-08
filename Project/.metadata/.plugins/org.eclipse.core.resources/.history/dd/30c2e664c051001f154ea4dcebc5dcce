@@ -1,0 +1,17 @@
+package com.childadoption.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.childadoption.dto.OrphanReqDto;
+import com.childadoption.repositories.OrphanDao;
+
+public class OrphanServiceImpl implements OrphanService {
+
+	@Autowired
+	private OrphanDao orphanDao;
+	@Override
+	public void addOrphan(OrphanRespDto orphanReq) {
+		
+	}
+
+}
