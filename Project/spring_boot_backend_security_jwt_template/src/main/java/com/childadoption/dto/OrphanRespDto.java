@@ -7,7 +7,7 @@ import lombok.*;
 @Setter
 public class OrphanRespDto {
 	    private String orphanName;
-	    private char orphanGender;
+	    private String orphanGender;
 	    private int orphanAge;
 	    private String orphanDetails;
 	    private Ngo ngo;

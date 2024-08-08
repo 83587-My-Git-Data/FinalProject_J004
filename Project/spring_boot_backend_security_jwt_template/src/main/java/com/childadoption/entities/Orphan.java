@@ -14,27 +14,26 @@ public class Orphan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orphan_id")
+    @Column(name = "orphan_id", unique = true)
     private Long orphanId;
 
-    @Column(name = "orphan_name", nullable = false, length = 20)
+    @Column(name = "orphan_name", nullable = false, unique = true, length = 20)
     private String orphanName;
 
     @Column(name = "orphan_gender", nullable = false, length = 10)
-    private char orphanGender;
+    private String orphanGender;
 
     @Column(name = "orphan_age", nullable = false)
-    private int orphanAge; 
+    private int orphanAge;
 
-    @Column(name = "orphan_details", nullable = false)
+    @Column(name = "orphan_details")
     private String orphanDetails;
 
-    @OneToOne
-    @JoinColumn(name = "ngo_id", nullable = false)
+    @Column(name = "ngo_id", nullable = false)
     private Ngo ngo;
 
-//    @Column(name = "ngo_name", length = 100, unique = true)
-//    private String ngoName;
+    @Column(name = "ngo_name", length = 100, unique = true)
+    private String ngoName;
 
     @Column(name = "is_adopted", nullable = false)
     private boolean isAdopted;

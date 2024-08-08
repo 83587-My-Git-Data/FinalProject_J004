@@ -7,17 +7,14 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+
+
 @Entity
 @Table(name="states")
 public class State {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "state_id")
-	private Long stateId;
 	
-//	@Column(name="state_code",nullable=false, unique = true)
-//	private String stateCode;
-	
-	@Column(name="state_name",nullable= false, unique = true)
+	@Column(name="state_code",nullable=false)
+	private String stateCode;
+	@Column(name="state_name",nullable= false)
 	private String stateName;
 }

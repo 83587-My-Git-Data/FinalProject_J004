@@ -5,8 +5,10 @@ import com.childadoption.dto.NgoRespDto;
 
 public interface NgoService {
 	void activateNgo(NgoReqDto ngoReq);  //ApiResponse
-	public void deactivateNgo(NgoReqDto ngoReq);
+	public void deActivateNgo(NgoReqDto ngoReq);
+	
 	void validateForm(NgoRespDto ngo);
+	
 	public NgoRespDto searchByCity(String city);
 	public NgoRespDto searchByName(String name);
 }

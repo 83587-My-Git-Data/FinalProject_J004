@@ -1,0 +1,8 @@
+package com.childadoption.services;
+
+import com.childadoption.dto.OrphanReqDto;
+import com.childadoption.dto.OrphanRespDto;
+
+public interface OrphanService {
+	public void addOrphan(OrphanRespDto orphanResp); //ApiResponse
+}

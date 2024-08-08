@@ -1,0 +1,20 @@
+package com.childadoption.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.childadoption.dto.NgoReqDto;
+import com.childadoption.entities.Ngo;
+import com.childadoption.repositories.NgoDao;
+
+public class NgoServiceImpl implements NgoService {
+
+	@Autowired
+	NgoDao ngoDao;
+	
+	@Override
+	public void ActivateNgo(NgoReqDto ngoReq) {
+		Ngo ngo = ngoDao.findByNgoId(ngoReq.getNgoId()).orElseThrow();// ApiResponse
+		
+	}
+
+}

@@ -6,7 +6,7 @@ import com.childadoption.dto.PersonRespDto;
 
 public interface PersonService {
 
-	public PersonRespDto signUp(PersonReqDto personReqDto);    //ApiResponse
+	public PersonRespDto signUp(PersonRespDto personResp);    //ApiResponse
 	public PersonRespDto authenticateUser(AuthRequest dto);  //ApiResponse........?????????????
 	 public PersonRespDto changePassword(PersonRespDto perDto, String newPassword); //ApiRespomse
 	 public PersonRespDto updateUserDetails(PersonReqDto perDto);

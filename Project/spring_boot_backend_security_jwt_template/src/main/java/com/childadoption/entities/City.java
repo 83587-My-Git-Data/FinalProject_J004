@@ -5,25 +5,22 @@ import javax.persistence.*;
 import lombok.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @ToString
+
+
 @Entity
 @Table(name="cities")
 public class City {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "city_id")
-	private Long cityId;
-	
-	@Column(name="city_name")
+	private Long id;
 	private String cityName;
 	
 	@ManyToOne
-	@JoinColumn(name="state_id",nullable=false)
+	@JoinColumn(name="state_code",nullable=false)
 	private State state;
 	
-	@Column(name="pincode", nullable = false, unique = true)
 	private int pinCode;
 }

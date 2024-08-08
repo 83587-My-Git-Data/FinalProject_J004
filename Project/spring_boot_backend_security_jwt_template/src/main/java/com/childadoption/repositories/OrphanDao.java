@@ -8,4 +8,7 @@ import com.childadoption.entities.Orphan;
 public interface OrphanDao extends JpaRepository<Orphan,Long> {
 	Optional<Orphan> findByOrphanId(Long id);
 	Optional<List<Orphan>> findByNgoNgoId(Long id);
+//	@Query("select c from Orphan c left join fetch c.posts where c.id=:id")
+//	Optional<Category> getCategoryAndPosts(Long id);
 }
+ 
