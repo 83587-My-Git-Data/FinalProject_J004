@@ -1,0 +1,18 @@
+package com.childadoption.repositories;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.childadoption.entities.Ngo;
+
+
+public interface NgoDao extends JpaRepository<Ngo, Long> {
+	Optional<Ngo> findByNgoId(Long id);
+	List<Ngo> findByCity(String city);
+	List<Ngo> findByNgoName(String name);
+	@Query("select n from Ngo n left join fetch n.City c where c.cityName = :city")
+	List<Ngo> findByCityLike(String city);
+}

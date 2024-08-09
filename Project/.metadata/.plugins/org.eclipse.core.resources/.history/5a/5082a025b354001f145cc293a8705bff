@@ -1,0 +1,12 @@
+package com.childadoption.dto;
+
+import lombok.*;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+public class AuthRequest {
+	private String emailId;
+	private String password;
+}

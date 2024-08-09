@@ -1,0 +1,24 @@
+package com.childadoption.entities;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Time {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "time_id", unique = true)
+    private Long timeId;
+	
+	@Column(name="time_slot")
+	private LocalDateTime inTimeSlot;
+	
+	@Column(name="time_slot")
+	private LocalDateTime outTimeSlot;
+	
+	@Column(name="is_Booked")
+	private Boolean isBooked;
+}

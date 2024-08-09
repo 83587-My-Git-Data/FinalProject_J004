@@ -1,0 +1,39 @@
+package com.childadoption.entities;
+
+import java.time.LocalDateTime;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Table(name="adoptions")
+public class Adoption {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "adoption_id", unique = true)
+    private Long adoptionId;
+	
+	@ManyToOne
+	private Person person;
+	
+	@OneToOne
+	private Orphan orphan;
+	
+	private LocalDateTime timeAdopted;
+}

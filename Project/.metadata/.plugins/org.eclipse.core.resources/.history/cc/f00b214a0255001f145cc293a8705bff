@@ -1,0 +1,29 @@
+package com.childadoption.entities;
+
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
+import lombok.*;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Entity
+@Table(name="cities")
+public class City {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "city_id")
+	@JsonProperty(access = Access.READ_ONLY)
+	private Long cityId;
+	
+	@Column(name="city_name")
+	private String cityName;
+	
+	@Column(name="pincode", nullable = false, unique = true)
+	private int pinCode;
+}

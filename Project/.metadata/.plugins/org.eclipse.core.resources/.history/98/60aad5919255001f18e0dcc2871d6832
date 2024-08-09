@@ -1,0 +1,5 @@
+package com.childadoption.security;
+
+public class SecurityConfig {
+
+}

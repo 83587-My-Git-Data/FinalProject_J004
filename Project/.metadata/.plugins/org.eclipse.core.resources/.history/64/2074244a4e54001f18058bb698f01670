@@ -1,0 +1,5 @@
+package com.childadoption.controller;
+
+public class HomePageController {
+
+}

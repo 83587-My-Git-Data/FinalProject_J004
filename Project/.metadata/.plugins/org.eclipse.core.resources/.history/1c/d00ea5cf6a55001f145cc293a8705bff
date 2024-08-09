@@ -1,0 +1,15 @@
+package com.childadoption.services;
+
+import java.util.List;
+
+
+import com.childadoption.dto.NgoRespDto;
+
+public interface NgoService {
+	void activateNgo(Long ngoId);  //ApiResponse
+	void validateForm(NgoRespDto ngo);
+	public List<NgoRespDto> searchByCity(String city);
+	public List<NgoRespDto> searchByName(String name);
+	public List<NgoRespDto> getAllNgos();
+	public void deactivateNgo(Long ngoId);
+}

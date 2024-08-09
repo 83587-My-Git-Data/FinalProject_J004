@@ -1,0 +1,11 @@
+package com.childadoption.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomePageController {
+	public HomePageController() {
+		System.out.println("In ctor : " + getClass());
+	} 
+}
