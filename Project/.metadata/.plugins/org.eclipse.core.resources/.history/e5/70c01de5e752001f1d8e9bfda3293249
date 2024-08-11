@@ -1,0 +1,11 @@
+package com.childadoption.services;
+
+import com.childadoption.dto.NgoReqDto;
+import com.childadoption.dto.NgoRespDto;
+
+public interface NgoService {
+	void activateNgo(NgoReqDto ngoReq);  //ApiResponse
+	public void deActivateNgo(NgoReqDto ngoReq);
+	
+	void validateForm(NgoRespDto ngo);
+}

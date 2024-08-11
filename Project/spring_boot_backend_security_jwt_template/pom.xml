@@ -74,7 +74,11 @@
 			<artifactId>commons-lang3</artifactId>
 			<!-- <version>3.14.0</version> -->
 		</dependency>
+<<<<<<< HEAD
 		<!-- <dependency>
+=======
+		<dependency>
+>>>>>>> origin/Developed
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
@@ -83,14 +87,22 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 		https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
+=======
+		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
+>>>>>>> origin/Developed
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
 			<version>0.11.5</version>
 		</dependency>
 
+<<<<<<< HEAD
 		https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
+=======
+		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl -->
+>>>>>>> origin/Developed
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
@@ -99,13 +111,21 @@
 		</dependency>
 
 
+<<<<<<< HEAD
 		https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
+=======
+		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson -->
+>>>>>>> origin/Developed
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.11.5</version>
 			<scope>runtime</scope>
+<<<<<<< HEAD
 		</dependency> -->
+=======
+		</dependency>
+>>>>>>> origin/Developed
 
 	</dependencies>
 

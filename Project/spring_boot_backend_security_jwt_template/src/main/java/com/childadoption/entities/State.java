@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.childadoption.entities;
 import java.util.List;
 
@@ -25,3 +26,25 @@ public class State {
 	private String stateName;
 	
 }
+=======
+package com.childadoption.entities;
+import javax.persistence.*;
+
+import lombok.*;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+
+
+@Entity
+@Table(name="states")
+public class State {
+	
+	@Column(name="state_code",nullable=false)
+	private String stateCode;
+	@Column(name="state_name",nullable= false)
+	private String stateName;
+}
+>>>>>>> origin/Developed

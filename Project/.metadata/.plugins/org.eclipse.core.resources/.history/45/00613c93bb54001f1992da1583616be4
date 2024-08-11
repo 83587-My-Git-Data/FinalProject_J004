@@ -1,0 +1,9 @@
+package com.childadoption.controller;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/ngoadmin")
+public class NgoAdminController {
+
+}

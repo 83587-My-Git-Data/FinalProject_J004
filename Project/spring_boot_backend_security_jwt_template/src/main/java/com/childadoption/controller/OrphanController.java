@@ -1,5 +1,6 @@
 package com.childadoption.controller;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+>>>>>>> origin/Developed
 
 import com.childadoption.dto.ApiResponse;
 import com.childadoption.dto.OrphanReqDto;
 import com.childadoption.dto.OrphanRespDto;
+<<<<<<< HEAD
 import com.childadoption.services.OrphanService;
 
 @RestController
@@ -45,15 +53,53 @@ public class OrphanController {
 	{
 			orphanService.addOrphan(orphanReqDto, ngoId);
 			return new ApiResponse("Orphan Added Successfully!!!");
+=======
+import com.childadoption.services.NgoService;
+import com.childadoption.services.OrphanService;
+
+@RestController
+@RequestMapping("/orphandetails")
+public class OrphanController {
+	
+//	@Autowired
+//	private NgoService ngoservice;
+	
+	@Autowired
+	private OrphanService orphanservice;
+	
+	public OrphanController() {
+		System.out.println("Ngo Controller !!!!");
+	}
+
+	@PostMapping("/add")
+	public ResponseEntity<?> addOrphanDetails(@RequestBody OrphanRespDto dto)
+	{
+		System.out.println("in add post "+dto);
+		try {
+			return ResponseEntity.status(HttpStatus.CREATED).body(orphanservice.addOrphan(dto));
+		}
+		catch(RuntimeException e){
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+					.body(new ApiResponse(e.getMessage()));
+		}
+>>>>>>> origin/Developed
 	}
 	
 	
 	@PutMapping("/edit")
+<<<<<<< HEAD
 //	@PreAuthorize("hasRole('NGOADMIN')")
 	public ResponseEntity<?> editOrphanDetails(@RequestBody OrphanReqDto dto, @RequestParam Long orphanId, @RequestParam Long ngoId)
 	{
 		try {
 			return ResponseEntity.status(HttpStatus.CREATED).body(orphanService.editOrphan(dto, orphanId, ngoId));
+=======
+	public ResponseEntity<?> editOrphanDetails(@RequestBody OrphanReqDto dto)
+	{
+		System.out.println("in add post "+dto);
+		try {
+			return ResponseEntity.status(HttpStatus.CREATED).body(orphanservice.editOrphan(dto));
+>>>>>>> origin/Developed
 		}
 		catch(RuntimeException e){
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
@@ -62,6 +108,7 @@ public class OrphanController {
 	}
 	
 	@DeleteMapping("/{orphanId}")
+<<<<<<< HEAD
 //	@PreAuthorize("hasRole('NGOADMIN')")
 	public ApiResponse deleteOrphanDetails(@PathVariable Long orphanId)
 	{
@@ -70,4 +117,17 @@ public class OrphanController {
 		return new ApiResponse("Orphan deleted Successfully");
 	}
 	
+=======
+	public ResponseEntity<?> deleteOrphanDetails(@PathVariable Long orphanId)
+	{
+		System.out.println("in delete orphan details "+orphanId);
+		return ResponseEntity.ok(orphanservice.deleteOrphan(orphanId));
+	}
+	
+	
+	
+	
+	
+	
+>>>>>>> origin/Developed
 }

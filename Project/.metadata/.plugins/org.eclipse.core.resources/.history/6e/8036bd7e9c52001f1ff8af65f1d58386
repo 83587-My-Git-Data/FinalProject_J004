@@ -1,0 +1,50 @@
+package com.childadoption.entities;
+import javax.persistence.*;
+
+import lombok.*;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+
+
+@Entity
+@Table(name="persons")
+public class Person {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="person_id",nullable=false)
+	private Long personId;
+	
+	@OneToOne
+	@JoinColumn(name="ngo_id",nullable=false)
+	private Ngo ngo;
+	
+	@Column(name="full_name",nullable=false)
+	private String fullName;
+	
+	@OneToOne
+	@JoinColumn(name="role_id",nullable=false)
+	private Role role;
+	
+	private String mobNo; /// string
+	
+	@Column(name="email_id",nullable=false)
+	private String emailId;
+	
+	@Column(name="password",nullable=false)
+	private String password;
+	
+	private String address;
+	
+	@OneToMany
+	@Column(name="city_id",nullable=false)
+	private City city; // string
+	
+	private String profileImagePath;
+	
+	private boolean isActive;
+	
+	private boolean isOnline;
+}

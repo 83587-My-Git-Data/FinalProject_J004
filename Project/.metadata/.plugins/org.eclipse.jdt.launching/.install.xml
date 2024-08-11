@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
     <entry loc="C:\Program Files\Java\jdk-11" stamp="1713511654319"/>
 </dirs>
+=======
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dirs>
+    <entry loc="C:\Program Files\Java\jdk-11" stamp="1718009077718"/>
+</dirs>
+>>>>>>> origin/Developed

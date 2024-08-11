@@ -1,0 +1,13 @@
+package com.childadoption.services;
+
+import com.childadoption.dto.NgoReqDto;
+
+public class NgoServiceImpl implements NgoService {
+
+	@Override
+	public void ActivateNgo(NgoReqDto ngoReq) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

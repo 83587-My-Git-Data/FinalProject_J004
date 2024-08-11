@@ -6,6 +6,10 @@ import com.childadoption.entities.Person;
 
 public interface PersonDao extends JpaRepository<Person, Long> {
 	Optional<Person> findByEmailIdAndPassword(String email,String pass);
+<<<<<<< HEAD
+=======
+	Optional<Person> findByEmailId(String email);
+>>>>>>> origin/Developed
 	Optional<Person> findByPersonId(Long id);
 	Optional<Person> findByCity(String city);
 }

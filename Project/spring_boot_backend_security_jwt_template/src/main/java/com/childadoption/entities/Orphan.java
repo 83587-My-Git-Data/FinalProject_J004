@@ -9,7 +9,11 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+<<<<<<< HEAD
 @Table(name = "orphans")	
+=======
+@Table(name = "orphans")
+>>>>>>> origin/Developed
 public class Orphan {
 
     @Id
@@ -29,10 +33,19 @@ public class Orphan {
     @Column(name = "orphan_details")
     private String orphanDetails;
 
+<<<<<<< HEAD
     @OneToOne
     @JoinColumn(name = "ngo_id", nullable = false)
     private Ngo ngo;
 
+=======
+    @Column(name = "ngo_id", nullable = false)
+    private Ngo ngo;
+
+    @Column(name = "ngo_name", length = 100, unique = true)
+    private String ngoName;
+
+>>>>>>> origin/Developed
     @Column(name = "is_adopted", nullable = false)
     private boolean isAdopted;
 }

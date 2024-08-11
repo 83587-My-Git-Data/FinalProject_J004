@@ -1,0 +1,8 @@
+package com.childadoption.services;
+
+import com.childadoption.dto.PersonRespDto;
+
+public interface PersonService {
+
+	 PersonRespDto signup(PersonRespDto personRespDto);
+}

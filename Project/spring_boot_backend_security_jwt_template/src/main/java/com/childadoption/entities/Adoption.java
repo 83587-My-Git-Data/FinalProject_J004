@@ -1,6 +1,7 @@
 package com.childadoption.entities;
 
 import java.time.LocalDateTime;
+<<<<<<< HEAD
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,12 +27,21 @@ import lombok.ToString;
 @Setter
 @ToString
 @Table(name="adoptions")
+=======
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+>>>>>>> origin/Developed
 public class Adoption {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "adoption_id", unique = true)
     private Long adoptionId;
 	
+<<<<<<< HEAD
 	@ManyToOne
 	@JoinColumn(name = "person_id")
 	private Person person;
@@ -41,5 +51,13 @@ public class Adoption {
 	private Orphan orphan;
 	
 	@Column(name = "time_adopted")
+=======
+	
+	private Person person;
+	
+	@OneToOne
+	private Orphan orphan;
+	
+>>>>>>> origin/Developed
 	private LocalDateTime timeAdopted;
 }

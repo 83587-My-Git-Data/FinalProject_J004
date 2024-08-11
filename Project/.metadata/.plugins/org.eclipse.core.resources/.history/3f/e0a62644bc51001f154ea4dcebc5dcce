@@ -1,0 +1,12 @@
+package com.childadoption.services;
+
+import com.childadoption.dto.OrphanReqDto;
+
+public class OrphanServiceImpl implements OrphanService {
+
+	@Override
+	public void addOrphan(OrphanReqDto orphanReq) {
+		
+	}
+
+}

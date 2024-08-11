@@ -4,12 +4,18 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.childadoption.entities.Orphan;
+<<<<<<< HEAD
 import com.childadoption.entities.Ngo;
+=======
+>>>>>>> origin/Developed
 
 public interface OrphanDao extends JpaRepository<Orphan,Long> {
 	Optional<Orphan> findByOrphanId(Long id);
 	Optional<List<Orphan>> findByNgoNgoId(Long id);
+<<<<<<< HEAD
 //	List<Orphan> findByNgoNgoId(Long id);
+=======
+>>>>>>> origin/Developed
 //	@Query("select c from Orphan c left join fetch c.posts where c.id=:id")
 //	Optional<Category> getCategoryAndPosts(Long id);
 }

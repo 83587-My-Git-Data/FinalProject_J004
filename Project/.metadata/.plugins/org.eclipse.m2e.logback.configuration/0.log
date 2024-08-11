@@ -24356,6 +24356,7 @@
 2024-08-07 21:16:19,494 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2024-08-07 21:16:19,494 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CDAC\Project\spring_boot_backend_security_jwt_template\src\test\resources
 2024-08-08 14:53:25,811 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+<<<<<<< HEAD
 2024-08-09 13:10:56,698 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2024-08-09 13:13:19,794 [Worker-13: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:spring_boot_backend_security_jwt_template:0.0.1 @ D:\Sunbeam_Cdac\CDAC\New folder (2)\Project\spring_boot_backend_security_jwt_template\pom.xml.
 2024-08-09 13:13:21,794 [Worker-13: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /spring_boot_backend_security_jwt_template/src/main/java
@@ -28198,3 +28199,5 @@
 2024-08-11 12:39:48,475 [Worker-121: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-08-11 12:39:48,475 [Worker-121: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2024-08-11 12:39:48,475 [Worker-121: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Sunbeam_Cdac\CDAC\New folder (2)\Project\spring_boot_backend_security_jwt_template\src\test\resources
+=======
+>>>>>>> origin/Developed

@@ -1,5 +1,6 @@
 package com.childadoption.services;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,18 @@ import com.childadoption.repositories.NgoDao;
 
 @Service
 @Transactional
+=======
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.childadoption.dto.NgoReqDto;
+import com.childadoption.dto.NgoRespDto;
+import com.childadoption.dto.PersonRespDto;
+import com.childadoption.entities.Ngo;
+import com.childadoption.entities.Person;
+import com.childadoption.repositories.NgoDao;
+
+>>>>>>> origin/Developed
 public class NgoServiceImpl implements NgoService {
 
 	@Autowired
@@ -27,6 +40,7 @@ public class NgoServiceImpl implements NgoService {
 	private ModelMapper mapper;
 	
 	@Override
+<<<<<<< HEAD
 	public void activateNgo(Long ngoId) {
 		Ngo ngo = ngoDao.findByNgoId(ngoId).orElseThrow(() -> new ResourceNotFoundException("Ngo doesn't Exist"));// ApiResponse
 		ngo.setActive(true);
@@ -38,6 +52,24 @@ public class NgoServiceImpl implements NgoService {
 		ngo.setActive(false);
 		System.out.println(ngo);
 		ngoDao.save(ngo);
+=======
+	public void activateNgo(NgoReqDto ngoReq) {
+		Ngo ngo = ngoDao.findByNgoId(ngoReq.getNgoId()).orElseThrow();// ApiResponse
+		if(ngo!=null)
+		{
+			ngo.setActive(true);
+			ngoDao.save(ngo);
+		}
+	}
+	
+	public void deActivateNgo(NgoReqDto ngoReq) {
+		Ngo ngo = ngoDao.findByNgoId(ngoReq.getNgoId()).orElseThrow();// ApiResponse
+		if(ngo!=null)
+		{
+			ngo.setActive(false);
+			ngoDao.save(ngo);
+		}
+>>>>>>> origin/Developed
 	}
 
 	@Override
@@ -54,6 +86,7 @@ public class NgoServiceImpl implements NgoService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<NgoRespDto> searchByCity(String city) {
 		List<NgoRespDto> ngoList = new ArrayList<>();
 		List<Ngo> p = ngoDao.findByCity(city);
@@ -83,4 +116,24 @@ public class NgoServiceImpl implements NgoService {
 		}
 		return ngoList;
 	}	
+=======
+	public NgoRespDto searchByCity(String city) {
+		Ngo p = ngoDao.findByCity(city).orElseThrow();
+		return mapper.map(p, NgoRespDto.class);
+	}
+
+	@Override
+	public NgoRespDto searchByName(String name) {
+		Ngo p = ngoDao.findByNgoName(name).orElseThrow();
+		return mapper.map(p, NgoRespDto.class);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+>>>>>>> origin/Developed
 }

@@ -1,5 +1,6 @@
 package com.childadoption.services;
 
+<<<<<<< HEAD
 import java.util.List;
 
 
@@ -12,4 +13,17 @@ public interface NgoService {
 	public List<NgoRespDto> searchByNgoName(String name);
 	public List<NgoRespDto> getAllNgos();
 	public void deactivateNgo(Long ngoId);
+=======
+import com.childadoption.dto.NgoReqDto;
+import com.childadoption.dto.NgoRespDto;
+
+public interface NgoService {
+	void activateNgo(NgoReqDto ngoReq);  //ApiResponse
+	public void deActivateNgo(NgoReqDto ngoReq);
+	
+	void validateForm(NgoRespDto ngo);
+	
+	public NgoRespDto searchByCity(String city);
+	public NgoRespDto searchByName(String name);
+>>>>>>> origin/Developed
 }
