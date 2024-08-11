@@ -1,0 +1,65 @@
+package com.childadoption.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.childadoption.dto.ApiResponse;
+import com.childadoption.dto.AuthRequest;
+import com.childadoption.dto.ChangePasswordDto;
+import com.childadoption.dto.PersonReqDto;
+import com.childadoption.services.PersonService;
+
+@RestController
+@RequestMapping("/person")
+public class PersonController {
+	@Autowired
+	private PersonService personService;
+	
+	public PersonController() {
+		System.out.println("In ctor " + getClass());
+	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<?> personSignUp(@RequestBody PersonReqDto personReqDto) {
+		try {
+			return ResponseEntity.ok(personService.signUp(personReqDto));
+		}catch(RuntimeException e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<?> personLoginIn(@RequestBody AuthRequest authReq) {
+		try {
+			return ResponseEntity.ok(personService.authenticateUser(authReq));
+		}catch(RuntimeException e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
+	
+	@PostMapping("/update")
+	public ResponseEntity<?> updateDetails(@RequestBody PersonReqDto personReqDto, @RequestParam Long personId){
+		try {
+			return ResponseEntity.ok(personService.updateUserDetails(personReqDto, personId));
+		} catch (RuntimeException e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
+	
+	
+	@PostMapping("/changePassword")
+	public ResponseEntity<?> changePassword(@RequestBody ChangePasswordDto changePasswordDto, @RequestParam Long personId){
+		try {
+			return ResponseEntity.ok(personService.changePassword(changePasswordDto, personId));
+		} catch (RuntimeException e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
+}

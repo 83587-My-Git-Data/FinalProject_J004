@@ -1,0 +1,56 @@
+package com.childadoption.entities;
+import javax.persistence.*;
+
+import lombok.*;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+
+
+@Entity
+@Table(name="persons")
+public class Person {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="person_id",nullable=false)
+	private Long personId;
+	
+	@OneToOne
+	@JoinColumn(name="ngo_id")
+	private Ngo ngo;
+	
+	@Column(name="full_name",nullable=false)
+	private String fullName;
+	
+	@JoinColumn(name="role_id",nullable=false)
+	private Role role;
+	
+	@Column(name = "mob_no")
+	private String mobNo; /// string
+	
+	@Column(name="email_id",nullable=false)
+	private String emailId;
+	
+	@Column(name="password",nullable=false)
+	private String password;
+	
+	private String address;
+	
+	@OneToOne
+	@JoinColumn(name="city_id",nullable=false)
+	private City city; // string
+	
+	@Column(name = "profile_image_path")
+	private String profileImagePath;
+	
+	@Column(name = "is_active")
+	private boolean isActive;
+	
+	@Column(name = "is_online")
+	private boolean isOnline;
+	
+	
+	// Initially in adoption table only one directional from adoption to Person we can do it bidirectional later
+}
