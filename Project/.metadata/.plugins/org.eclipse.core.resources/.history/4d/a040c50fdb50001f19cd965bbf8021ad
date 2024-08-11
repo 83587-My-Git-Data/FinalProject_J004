@@ -1,0 +1,27 @@
+package com.childadoption.services;
+
+import java.util.Optional;
+
+import com.childadoption.dto.DonationRespDto;
+import com.childadoption.entities.Donation;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@AutoWired
+
+
+public class DonationServiceImpl implements DonationService {
+
+	@Override
+	public DonationRespDto updateProfile(DonationRespDto userDto) {
+		 Optional<Donation> donation = Optional.ofNullable(Dona.findByEmail(userDto.getEmail()));
+	        if (user.isPresent()) {
+	            User userModel = user.get();
+	            userModel.setFirstName(userDto.getFirstName())
+	                    .setLastName(userDto.getLastName())
+	                    .setMobileNumber(userDto.getMobileNumber());
+	            return UserMapper.toUserDto(userRepository.save(userModel));
+	        }
+	}
+
+}

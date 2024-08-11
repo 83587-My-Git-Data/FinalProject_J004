@@ -1,0 +1,28 @@
+package com.childadoption.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.childadoption.dto.DonationReqDto;
+import com.childadoption.dto.DonationRespDto;
+import com.childadoption.entities.Donation;
+import com.childadoption.repositories.DonationDao;
+
+
+public class DonationServiceImpl implements DonationService {
+
+	@Autowired
+	DonationDao donationDao;
+	@Override
+	//******************Changes 
+	public DonationRespDto updateDonation(DonationReqDto dDto) {
+		Donation donation = donationDao.findByDonationId(dDto.getDonationId()).orElseThrow();
+	      
+		if(donation!=null)
+		{
+		
+		}
+	}
+
+}

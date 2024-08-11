@@ -1,0 +1,72 @@
+package com.childadoption.services;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.childadoption.dto.ApiResponse;
+import com.childadoption.dto.OrphanReqDto;
+import com.childadoption.dto.OrphanRespDto;
+import com.childadoption.dto.PersonRespDto;
+import com.childadoption.entities.Orphan;
+import com.childadoption.entities.Person;
+import com.childadoption.repositories.OrphanDao;
+
+public class OrphanServiceImpl implements OrphanService {
+
+	@Autowired
+	private OrphanDao orphanDao;
+	
+	@Autowired
+	private ModelMapper mapper;
+	@Override
+	public ApiResponse addOrphan(OrphanRespDto orphanResp) {
+		Orphan o = mapper.map(orphanResp, Orphan.class);
+		orphanDao.save(o);
+		return new ApiResponse("Orphan Added in the table");
+	}
+	
+	public void deleteOrphan(Long id)
+	{
+		Orphan o = orphanDao.findByOrphanId(id).orElseThrow();
+		if(o!=null)
+		{
+			orphanDao.delete(o);
+		}
+	}
+	
+	public ApiResponse editOrphan(OrphanReqDto orphanReq)
+	{
+		Orphan o1 = orphanDao.findByOrphanId(orphanReq.getOrphanId()).orElseThrow();
+		if(o1!=null)
+		{
+			o1.setOrphanName(orphanReq.getOrphanName());
+			o1.setOrphanAge(orphanReq.getOrphanAge());
+			o1.setOrphanGender(orphanReq.getOrphanGender());
+			o1.setNgoName(orphanReq.getNgoName());
+			o1.setNgo(orphanReq.getNgo());
+			o1.setOrphanDetails(orphanReq.getOrphanDetails());
+			
+			orphanDao.save(o1);
+			
+		}
+		
+//		return mapper.map(o1,OrphanRespDto.class );
+		return new ApiResponse("Orphan details updated");
+	}
+
+	@Override
+	public List<OrphanRespDto> GetOrphanListAsNgo(Long id) {
+		List<Orphan> list = orphanDao.findByNgoNgoId(id).orElseThrow();
+		
+	}
+	
+	
+	
+
+}
+/*
+ *Person p = mapper.map(personResp, Person.class);
+		personDao.save(p);
+		return mapper.map(p, PersonRespDto.class); */

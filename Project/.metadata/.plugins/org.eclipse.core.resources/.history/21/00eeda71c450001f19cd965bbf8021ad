@@ -1,0 +1,10 @@
+package com.childadoption.dto;
+
+import lombok.*;
+
+@Getter
+@Setter
+public class RoleRespDto {
+
+	private String roleType;
+}
