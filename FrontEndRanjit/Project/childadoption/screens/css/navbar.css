@@ -1,0 +1,50 @@
+/* navbar.css */
+
+.navbar {
+  background-color: #6a0dad; /* Purple background */
+}
+
+.navbar-brand {
+  color: #ffffff; /* White text */
+  font-size: 1.5rem; /* Optional: Adjust font size */
+  text-decoration: none; /* Remove underline */
+}
+
+.navbar-brand:hover {
+  color: #e0e0e0; /* Slightly lighter color on hover */
+}
+
+.navbar-collapse {
+  display: flex; /* Flex container for horizontal layout */
+  justify-content: center; /* Center items horizontally */
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Flex container for horizontal layout */
+}
+
+.nav-item {
+  margin: 0 15px; /* Horizontal spacing between nav items */
+}
+
+.nav-link {
+  color: #ffffff; /* White text */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 20px; /* Add padding for better spacing */
+  display: block; /* Ensure the link occupies the space */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  position: relative; /* To position pseudo-elements */
+}
+
+.nav-link:hover {
+  background-color: #5b0a9f; /* Slightly darker purple */
+  transform: scale(1.1); /* Expand effect */
+}
+
+/* Optional: Add this to maintain hover effect */
+.navbar-nav .nav-item {
+  display: flex; /* Flexbox for better control */
+}

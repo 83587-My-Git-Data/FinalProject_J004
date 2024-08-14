@@ -1,0 +1,35 @@
+/* Footer.css */
+
+.footer {
+  background-color: #6a0dad; /* Purple background */
+  color: #ffffff; /* White text */
+  padding: 20px; /* Padding around the footer */
+  text-align: center; /* Center align text */
+}
+
+.footer .container {
+  max-width: 1200px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container */
+}
+
+.footer-links {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline; /* Display list items inline */
+  margin: 0 15px; /* Horizontal spacing between items */
+}
+
+.footer-link {
+  color: #ffffff; /* White text */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Add padding for better spacing */
+  display: inline-block; /* Make links behave like block elements */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+.footer-link:hover {
+  background-color: #5b0a9f; }
