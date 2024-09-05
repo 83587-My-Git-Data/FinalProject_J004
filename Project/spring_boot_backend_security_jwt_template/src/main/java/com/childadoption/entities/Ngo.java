@@ -26,8 +26,14 @@ public class Ngo {
     @Column(name = "total_orphans", nullable = false)
     private int totalOrphans;
     
+<<<<<<< HEAD
+    @OneToOne
+    @JoinColumn(name = "city_id", nullable = false)
+    private City city;
+=======
     @Column(name = "city", nullable = false)
     private String city;
+>>>>>>> origin/Developed
 
     @Column(name = "is_active", nullable = false)
     private boolean isActive;

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
     <libraryInfo home="C:\Program Files\Java\jdk-11" version="11.0.20"/>
 </libraryInfos>
+=======
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="C:\Program Files\Java\jdk-11" version="11.0.20"/>
+</libraryInfos>
+>>>>>>> origin/Developed

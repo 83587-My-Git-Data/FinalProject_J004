@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=spring_boot_backend_security_jwt_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.childadoption.services{PersonService.java[PersonService" modifiers="513" timestamp="1723201281858"/>
+    <typeInfo handle="=spring_boot_backend_security_jwt_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.childadoption.services{DonationService.java[DonationService" modifiers="513" timestamp="1723189027393"/>
+    <typeInfo handle="=spring_boot_backend_security_jwt_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.childadoption.services{NgoService.java[NgoService" modifiers="513" timestamp="1723196277605"/>
+    <typeInfo handle="=spring_boot_backend_security_jwt_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.childadoption.services{OrphanService.java[OrphanService" modifiers="513" timestamp="1723204929522"/>
+    <typeInfo handle="=spring_boot_backend_security_jwt_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.childadoption.services{AppointmentService.java[AppointmentService" modifiers="513" timestamp="1723213381213"/>
+    <typeInfo handle="=spring_boot_backend_security_jwt_template/C:\/Program Files\/Java\/jdk-11\/lib\/jrt-fs.jar`java.base=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;java.lang(RuntimeException.class[RuntimeException" modifiers="1" timestamp="1713511643487"/>
+</typeInfoHistroy>
+=======
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
     <typeInfo handle="=spring_boot_backend_security_jwt_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.childadoption.services{PersonService.java[PersonService" modifiers="513" timestamp="1722833515357"/>
@@ -8,3 +19,4 @@
     <typeInfo handle="=spring_boot_backend_security_jwt_template/C:\/Users\/admin\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.18\/spring-data-jpa-2.7.18.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.18=/=/maven.scope=/compile=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1719068962600"/>
     <typeInfo handle="=spring_boot_backend_security_jwt_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.childadoption.services{AppointmentService.java[AppointmentService" modifiers="513" timestamp="1723036944341"/>
 </typeInfoHistroy>
+>>>>>>> origin/Developed

@@ -21,4 +21,11 @@ public class Application {
 		return modelMapper;
 	}
 
+<<<<<<< HEAD
+//	@Bean
+//	public PasswordEncoder passwordEncoder() {
+//		return new BCryptPasswordEncoder();
+//	}
+=======
+>>>>>>> origin/Developed
 }

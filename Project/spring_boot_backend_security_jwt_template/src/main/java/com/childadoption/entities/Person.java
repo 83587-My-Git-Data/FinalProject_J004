@@ -18,16 +18,27 @@ public class Person {
 	private Long personId;
 	
 	@OneToOne
+<<<<<<< HEAD
+	@JoinColumn(name="ngo_id")
+=======
 	@JoinColumn(name="ngo_id",nullable=false)
+>>>>>>> origin/Developed
 	private Ngo ngo;
 	
 	@Column(name="full_name",nullable=false)
 	private String fullName;
 	
+<<<<<<< HEAD
+	@JoinColumn(name="role_id",nullable=false)
+	private Role role;
+	
+	@Column(name = "mob_no")
+=======
 	@OneToOne
 	@JoinColumn(name="role_id",nullable=false)
 	private Role role;
 	
+>>>>>>> origin/Developed
 	private String mobNo; /// string
 	
 	@Column(name="email_id",nullable=false)
@@ -38,6 +49,19 @@ public class Person {
 	
 	private String address;
 	
+<<<<<<< HEAD
+	@OneToOne
+	@JoinColumn(name="city_id",nullable=false)
+	private City city; // string
+	
+	@Column(name = "profile_image_path")
+	private String profileImagePath;
+	
+	@Column(name = "is_active")
+	private boolean isActive;
+	
+	@Column(name = "is_online")
+=======
 	@OneToMany
 	@Column(name="city_id",nullable=false)
 	private City city; // string
@@ -46,6 +70,7 @@ public class Person {
 	
 	private boolean isActive;
 	
+>>>>>>> origin/Developed
 	private boolean isOnline;
 	
 	

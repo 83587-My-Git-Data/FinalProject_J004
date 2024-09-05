@@ -11,6 +11,9 @@ public class OrphanRespDto {
 	    private int orphanAge;
 	    private String orphanDetails;
 	    private Ngo ngo;
+<<<<<<< HEAD
+=======
 	    private String ngoName;
+>>>>>>> origin/Developed
 	    private boolean isAdopted;
 }
