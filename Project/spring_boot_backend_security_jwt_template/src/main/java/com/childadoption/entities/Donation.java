@@ -18,7 +18,12 @@ public class Donation {
 	@Column(name = "donation_id", unique = true)
 	private Long donationId;
 
+<<<<<<< HEAD
+	@ManyToOne
+	@JoinColumn(name = "user_id", unique = true)
+=======
 	@Column(name = "user_id", unique = true)
+>>>>>>> origin/Developed
 	private Person user;
 
 	@Column(name = "donated_amount", nullable = false)
